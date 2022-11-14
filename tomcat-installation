@@ -1,0 +1,31 @@
+# sudo yum -y update
+# yum install java-1.8*
+# cd /opt/
+# wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.68/bin/apache-tomcat-9.0.68.tar.gz
+# tar -zxvf apache-tomcat-9.0.68.tar.gz
+# cd apache-tomcat-9.0.68/
+# cd bin/
+# chmod +x startup.sh
+# chmod +x shutdown.sh
+
+(Allow all hosts)
+# vi /opt/apache-tomcat-9.0.68/webapps/manager/META-INF/context.xml
+--> ".*"
+
+(Allow all hosts)
+# vi /opt/apache-tomcat-9.0.68/webapps/host-manager/META-INF/context.xml
+--> ".*"
+
+# cd /opt/apache-tomcat-9.0.68
+./bin/shutdown.sh
+./bin/startup.sh
+
+# vi /opt/apache-tomcat-9.0.68/conf/tomcat-users.xml
+
+<role rolename="manager-gui"/>
+<role rolename="manager-script"/>
+<role rolename="manager-jmx"/>
+<role rolename="manager-status"/>   
+<user username="admin" password="admin" roles="manager-gui,manager-script,manager-jmx,manager-status"/>
+<user username="deployer" password="deployer" roles="manager-script"/>
+<user username="tomcat" password="s3cret" roles="manager-gui"/>

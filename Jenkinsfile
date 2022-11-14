@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage("git clone code") {
       steps{
-        git 'https://github.com/chetanshell/tomcatdeploy.git'
+        git 'https://github.com/chetanshell/Jenkinsbuild.git'
       }
     }
     

@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2>Jenkins Successfully Deloyed and updated with new push for automatic build and deploy</h2>
+<h2>Jenkins Successfully Deloyed from Jenkins full pipeline on Nov 14th 2022</h2>
 </body>
 </html>
